@@ -7,11 +7,20 @@ const api = axios.create({
   },
 });
 
-export const fetchBooks = async (keyword: string) => {
+/**
+ *
+ * @param searchTarget total (전체), title (제목), author (저자), publisher (발행자), cheonggu (청구기호), 생략시 전체
+ * @param keyword 검색어
+ * @returns
+ */
+export const fetchBooks = async (searchTarget: string, keyword: string) => {
   try {
     const { data } = await api.get("?systemType=오프라인자료", {
       params: {
+        srchTarget: searchTarget,
         kwd: keyword,
+        apiType: "json",
+        category: "도서",
       },
     });
 

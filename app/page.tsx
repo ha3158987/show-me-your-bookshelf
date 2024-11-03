@@ -1,26 +1,63 @@
 "use client";
 
-import Image from "next/image";
+interface SearchedItemInfo {
+  titleInfo: string;
+  isbn: string;
+}
+
+// import Image from "next/image";
 import { fetchBooks } from "@/utils/api";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const books = fetchBooks("오롯이");
+  const [searchValue, setSearchValue] = useState("");
+  const [resultList, setResultList] = useState<SearchedItemInfo[] | null>(null);
 
-  // if (books) {
-  //   console.log("books:", books);
-  // }
+  const handleChangeInputValue = async () => {
+    if (searchValue !== "") {
+      const data = await fetchBooks("title", searchValue);
+      setResultList(data.result);
+    } else {
+      setResultList(null);
+    }
+  };
 
   useEffect(() => {
-    if (books) {
-      console.log("books:", books);
-    }
-  }, [books]);
+    handleChangeInputValue();
+  }, [searchValue]);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <header>This is Header</header>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <form className="w-full max-w-xl mx-auto">
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              placeholder="검색어를 입력하세요"
+              className="flex-1"
+            />
+            <button type="submit">
+              {/* <Search className="w-4 h-4 mr-2" /> */}
+              검색
+            </button>
+          </div>
+          <div>
+            {!!resultList ? (
+              <>
+                {resultList.map((book) => (
+                  <div key={book.isbn}>
+                    <p>{book.titleInfo}</p>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <div>{"검색결과가 없습니다."}</div>
+            )}
+          </div>
+        </form>
         {/* <Image
           className="dark:invert"
           src="/next.svg"
