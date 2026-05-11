@@ -1,0 +1,11 @@
+{
+  "enabledPlugins": {
+    "superpowers@obra-superpowers": true,
+    "javascript-typescript@wshobson-agents": true,
+    "frontend-mobile-development@wshobson-agents": true,
+    "tdd-workflows@wshobson-agents": true,
+    "error-debugging@wshobson-agents": true,
+    "git-pr-workflows@wshobson-agents": true,
+    "accessibility-compliance@wshobson-agents": true
+  }
+}
