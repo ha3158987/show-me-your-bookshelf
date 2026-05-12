@@ -261,6 +261,58 @@ public/
 ```
 표지 비율 = 2:3 (책 자연 비율). 모바일 360px 폭 기준 카드 폭 ≈ 108px → 표지 ≈ 108×162. 터치 타깃은 카드 전체(48px+) 충족.
 
+### 3.3 "Shelf room" — Library 페이지 한정 다크 surface
+
+내 서재(`/`) 페이지만 Webflow `card-feature-dark` 폴라리티를 적용해 **실제 책 진열대**의 입체감을 표현합니다. 다른 페이지(추가 시트, 책 상세, 모달)는 light Webflow base 유지.
+
+**추가 토큰** (Library 전용, `tailwind.config.ts`에 등록):
+
+| 토큰 | 값 | 용도 |
+|---|---|---|
+| `shelf-bg` | `#1a1a1a` | 라이브러리 페이지 background |
+| `shelf-edge` | `#3a3a3a` | 선반 윗면에 빛이 비치는 1px highlight |
+| `shelf-shadow` | `#0a0a0a` | 선반 아래로 깊어지는 그림자 색 |
+| `shadow-book` | `0 2px 4px rgba(0,0,0,0.4), 0 6px 10px rgba(0,0,0,0.3)` | 각 책 아래 contact shadow |
+
+**구조 (각 책 행 / shelf row)**:
+
+```
+┌────────────────────────────────────┐
+│  [Book A]   [Book B]   [Book C]    │  ← 책 자체
+│   shadow    shadow     shadow      │  ← elliptical contact shadow (radial)
+├════════════════════════════════════┤  ← shelf-edge: 1px #3a3a3a 가로선
+│         (gradient 12-18px)         │  ← shelf-shadow → shelf-bg 페이드
+└────────────────────────────────────┘
+```
+
+CSS pseudo-code:
+
+```css
+.shelf-row {
+  position: relative;
+  padding-bottom: 24px;       /* 그림자 영역 */
+}
+.shelf-row::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 16px;
+  height: 1px; background: theme(colors.shelf-edge);
+}
+.shelf-row::before {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 18px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+}
+.book-card {
+  filter: drop-shadow(theme(boxShadow.book));
+}
+```
+
+**규칙**:
+- 시각 효과 (선반·그림자)는 Library 페이지에만. 책 상세·모달·추가 시트는 light Webflow base.
+- 책 표지 이미지가 없는 경우 chromatic accent 팔레트(purple/pink/blue/orange/green) 중 하나를 풀필로 사용. 이때도 contact shadow는 동일.
+- Tap 가능 영역은 카드(표지) 전체. 액티브 상태에서 책이 살짝 들리는 효과(transform translateY -2px) — 후속 폴리시 단계.
+
 ## 4. Pencil 디자인 작업 계획
 
 Phase 4 첫 단계로 Pencil 문서를 생성합니다.

@@ -44,6 +44,24 @@ Applied:
 
 No data / API / test-toolchain changes. Tasks 6–24 remain untouched. Implementation can resume from Task 6 (domain types) when the user approves.
 
+## Library "shelf room" treatment (post-Webflow swap)
+
+User wanted Library page to feel like a physical bookshelf with depth (referenced an iOS Apple Books–style screenshot for the shelf+drop-shadow detail). Applied within the Webflow design system as a `card-feature-dark` polarity exception for the home page only.
+
+Applied:
+- New tokens in `tailwind.config.ts`: `shelf-bg #1a1a1a`, `shelf-edge #3a3a3a`, `shelf-shadow #0a0a0a`, and `shadow-book` (multi-stop book contact shadow recipe).
+- `docs/design/01-library.svg` redesigned with:
+  - Dark vertical-gradient room background
+  - iOS status-bar mockup, dark header, section divider row (search + eyebrow + shelf glyph)
+  - 3 rows of books with per-row shelf plank (1 px shelf-edge top + 18 px linear-gradient shadow band beneath)
+  - Per-book elliptical contact shadow (radial gradient)
+  - More varied cover compositions (abstract elements + chromatic accents) to communicate book variety
+  - Partial 4th-row peek at bottom edge to suggest infinite scroll
+- Design spec §3.3 added documenting the shelf-room CSS pattern with pseudo-code.
+- `docs/design/README.md` updated.
+
+Other screens (Add Book Sheet, Book Detail, Auth Modal) stay light per Webflow base — the dark shelf is a Library-page exception, not a global theme.
+
 ## What's pending (Tasks 6–24)
 
 6. Domain types (`lib/db/types.ts`)

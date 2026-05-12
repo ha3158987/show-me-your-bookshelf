@@ -7,7 +7,7 @@
 | 파일 | 내용 |
 |---|---|
 | [`00-design-tokens.svg`](./00-design-tokens.svg) | 컬러(primary + 5 chromatic accents + neutrals)·라디우스(2/4/8/full)·버튼·타이포 참조 |
-| [`01-library.svg`](./01-library.svg) | 내 서재 (홈) — 3-up 그리드, 좌상단 + 버튼, 우상단 로그인. 책 표지는 chromatic 팔레트 |
+| [`01-library.svg`](./01-library.svg) | 내 서재 (홈) — **dark shelf room** 모드: 3-up 그리드, 선반 plank + contact shadow로 입체감, 다양한 표지 디자인 |
 | [`02-add-book-sheet.svg`](./02-add-book-sheet.svg) | 책 추가 모달 — ISBN/제목 검색 + 결과 카드 + 검정 primary CTA |
 | [`03-book-detail.svg`](./03-book-detail.svg) | 책 상세 — 표지 hero, 구절 추가 CTA, hairline-bordered 구절 카드 |
 | [`04-auth-modal.svg`](./04-auth-modal.svg) | 로그인 모달 — 이메일/패스워드 + Google + 게스트 진입 |
@@ -24,7 +24,8 @@
 - **Radii**: `none/xs(2)/sm(4)/md(8)/full(9999)` — sm=4px가 버튼, md=8px가 카드. Pill CTA 사용 안 함.
 - **Spacing**: 2/4/8/12/16/20/24/32 (4px base)
 - **Typography**: Inter (WF Visual Sans Variable 대체). 가중치는 400/500/600만 — **700 이상 금지**. display는 negative tracking.
-- **Shadows**: 5-stop layered drop shadow (`shadow-layered`, `shadow-layered-strong`, `shadow-modal`).
+- **Shadows**: 5-stop layered drop shadow (`shadow-layered`, `shadow-layered-strong`, `shadow-modal`) + Library-전용 `shadow-book` (책 contact shadow).
+- **Shelf room (Library 전용)**: `shelf-bg #1a1a1a` 배경 + `shelf-edge #3a3a3a` 1px highlight + linear-gradient 그림자로 실제 책 진열대 느낌. 상세는 design spec §3.3.
 
 본 SVG mockup은 Pencil MCP의 PNG 익스포트 한계로 손코딩되었습니다. Phase 4 구현 후 실제 Playwright 스크린샷으로 교체될 수 있습니다.
 
