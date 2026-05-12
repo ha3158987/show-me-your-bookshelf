@@ -62,6 +62,25 @@ Applied:
 
 Other screens (Add Book Sheet, Book Detail, Auth Modal) stay light per Webflow base — the dark shelf is a Library-page exception, not a global theme.
 
+## Library shelf revision — light mode + stronger shadow (post-feedback)
+
+User clarified: the Apple Books reference was for the **physical-shelf depth feeling only**, not the dark color. Wanted light background restored, no iOS status-bar chrome, and stronger shadow gradients.
+
+Applied:
+- Removed `shelf-bg / shelf-edge / shelf-shadow` color tokens (no longer needed in light mode).
+- `shadow-book` strengthened to 3-stop multi-offset recipe (0.22 / 0.18 / 0.10) — visible on white canvas.
+- New `shadow-shelf` token: hairline bottom rule + 2-stop deep drop shadow.
+- `docs/design/01-library.svg` rewritten:
+  - White `#ffffff` canvas (no dark room background)
+  - iOS status bar removed entirely
+  - Header retains AddFab (hairline-outlined circle on light) + "내 서재" title + "로그인"
+  - Section eyebrow + hairline divider
+  - 3 rows of books — each row ends with a strong 34 px linear-gradient shadow band (opacity 0.42 → 0)
+  - Per-book elliptical contact shadow stays
+  - 4th-row peek removed
+- Design spec §3.3 rewritten — "Shelf plank" (light mode) replaces "Shelf room" (dark mode). CSS pseudo-code uses pure rgba shadow over canvas; no dark surface.
+- `docs/design/README.md` updated.
+
 ## What's pending (Tasks 6–24)
 
 6. Domain types (`lib/db/types.ts`)

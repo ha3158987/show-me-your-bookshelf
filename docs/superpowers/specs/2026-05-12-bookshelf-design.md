@@ -261,57 +261,66 @@ public/
 ```
 표지 비율 = 2:3 (책 자연 비율). 모바일 360px 폭 기준 카드 폭 ≈ 108px → 표지 ≈ 108×162. 터치 타깃은 카드 전체(48px+) 충족.
 
-### 3.3 "Shelf room" — Library 페이지 한정 다크 surface
+### 3.3 "Shelf plank" — Library 입체감 (라이트 모드)
 
-내 서재(`/`) 페이지만 Webflow `card-feature-dark` 폴라리티를 적용해 **실제 책 진열대**의 입체감을 표현합니다. 다른 페이지(추가 시트, 책 상세, 모달)는 light Webflow base 유지.
+내 서재(`/`) 페이지의 배경은 Webflow base `canvas #ffffff` 유지. 입체감은 **각 줄 아래의 강한 그림자 그라데이션 + 책 contact shadow** 만으로 표현해 책이 실제 선반 위에 놓인 듯 보이게 합니다. 다크 surface는 사용하지 않습니다.
 
-**추가 토큰** (Library 전용, `tailwind.config.ts`에 등록):
+**추가 토큰** (`tailwind.config.ts` `boxShadow`):
 
 | 토큰 | 값 | 용도 |
 |---|---|---|
-| `shelf-bg` | `#1a1a1a` | 라이브러리 페이지 background |
-| `shelf-edge` | `#3a3a3a` | 선반 윗면에 빛이 비치는 1px highlight |
-| `shelf-shadow` | `#0a0a0a` | 선반 아래로 깊어지는 그림자 색 |
-| `shadow-book` | `0 2px 4px rgba(0,0,0,0.4), 0 6px 10px rgba(0,0,0,0.3)` | 각 책 아래 contact shadow |
+| `shadow-book` | `0 4px 6px rgba(0,0,0,0.22), 0 10px 20px rgba(0,0,0,0.18), 0 18px 30px rgba(0,0,0,0.10)` | 각 책 아래 강한 contact shadow (3-stop 다층) |
+| `shadow-shelf` | `0 2px 0 0 #d8d8d8, 0 6px 8px rgba(0,0,0,0.18), 0 16px 18px rgba(0,0,0,0.10)` | 행 전체 아래 선반 그림자 (하단 hairline + 깊은 그림자) |
 
 **구조 (각 책 행 / shelf row)**:
 
 ```
 ┌────────────────────────────────────┐
-│  [Book A]   [Book B]   [Book C]    │  ← 책 자체
-│   shadow    shadow     shadow      │  ← elliptical contact shadow (radial)
-├════════════════════════════════════┤  ← shelf-edge: 1px #3a3a3a 가로선
-│         (gradient 12-18px)         │  ← shelf-shadow → shelf-bg 페이드
+│  [Book A]   [Book B]   [Book C]    │  ← 책 표지 (각 책마다 shadow-book 적용)
+│ ─── ellipse shadow under each ───  │  ← per-book contact shadow (radial gradient)
+├════════════════════════════════════┤  ← 1 px hairline (#d8d8d8): 선반 모서리
+│ ▓▓▓▓ strong gradient (0.42→0) ▓▓▓ │  ← 34 px linear gradient 그림자 (라이트 위에)
 └────────────────────────────────────┘
 ```
 
 CSS pseudo-code:
 
 ```css
+/* 책: 강한 drop-shadow로 선반에 내려앉은 느낌 */
+.book-card {
+  border-radius: 2px;
+  box-shadow: theme(boxShadow.book);
+}
+
+/* 줄(row)별 선반: 1px hairline + 강한 그라데이션 그림자 */
 .shelf-row {
   position: relative;
-  padding-bottom: 24px;       /* 그림자 영역 */
+  padding-bottom: 34px;          /* 그림자 영역 */
 }
-.shelf-row::after {
+.shelf-row::after {              /* 선반 모서리 hairline */
   content: "";
-  position: absolute; left: 0; right: 0; bottom: 16px;
-  height: 1px; background: theme(colors.shelf-edge);
+  position: absolute; left: 0; right: 0; bottom: 34px;
+  height: 1px; background: theme(colors.hairline);
 }
-.shelf-row::before {
+.shelf-row::before {             /* 깊은 그림자 그라데이션 */
   content: "";
   position: absolute; left: 0; right: 0; bottom: 0;
-  height: 18px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
-}
-.book-card {
-  filter: drop-shadow(theme(boxShadow.book));
+  height: 34px;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.42) 0%,
+    rgba(0,0,0,0.22) 22%,
+    rgba(0,0,0,0.08) 55%,
+    rgba(0,0,0,0)   100%
+  );
 }
 ```
 
 **규칙**:
-- 시각 효과 (선반·그림자)는 Library 페이지에만. 책 상세·모달·추가 시트는 light Webflow base.
-- 책 표지 이미지가 없는 경우 chromatic accent 팔레트(purple/pink/blue/orange/green) 중 하나를 풀필로 사용. 이때도 contact shadow는 동일.
-- Tap 가능 영역은 카드(표지) 전체. 액티브 상태에서 책이 살짝 들리는 효과(transform translateY -2px) — 후속 폴리시 단계.
+- 배경은 항상 `canvas #ffffff` — 다크 모드 / 어두운 surface 사용 금지.
+- 그림자 강도는 라이트 위에서 충분히 보이도록 시작 opacity ≥ 0.40 유지. 너무 옅으면 선반 인상 사라짐.
+- 책 표지 이미지가 없을 때만 chromatic accent 팔레트(purple/pink/blue/orange/green)를 풀필로 사용. 이때도 `shadow-book`은 동일.
+- 액티브 상태(터치/호버 시): `transform: translateY(-2px)`로 책이 살짝 들리는 후속 폴리시 단계 — 본 PR 범위 밖.
 
 ## 4. Pencil 디자인 작업 계획
 

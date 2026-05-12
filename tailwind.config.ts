@@ -28,11 +28,6 @@ const config: Config = {
         "accent-green": "#00d722",
         "accent-yellow": "#ffae13",
         "accent-red": "#ee1d36",
-        // Library "shelf room" surfaces — dark polarity of card-feature
-        // used only on the library/home page to evoke a physical bookshelf.
-        "shelf-bg": "#1a1a1a",
-        "shelf-edge": "#3a3a3a",
-        "shelf-shadow": "#0a0a0a",
       },
       borderRadius: {
         none: "0px",
@@ -85,8 +80,10 @@ const config: Config = {
         "layered": "0 84px 24px rgba(0,0,0,0), 0 54px 22px rgba(0,0,0,0.01), 0 30px 18px rgba(0,0,0,0.04), 0 13px 13px rgba(0,0,0,0.08), 0 3px 7px rgba(0,0,0,0.09)",
         "layered-strong": "0 84px 24px rgba(0,0,0,0), 0 54px 22px rgba(0,0,0,0.02), 0 30px 18px rgba(0,0,0,0.06), 0 13px 13px rgba(0,0,0,0.10), 0 3px 7px rgba(0,0,0,0.12)",
         "modal": "0 24px 24px rgba(0,0,0,0.26), 0 6px 13px rgba(0,0,0,0.29)",
-        // Library book contact shadow — sits beneath each cover on the shelf
-        "book": "0 2px 4px rgba(0,0,0,0.4), 0 6px 10px rgba(0,0,0,0.3)",
+        // Library book contact shadow — strong drop beneath each cover on a light shelf
+        "book": "0 4px 6px rgba(0,0,0,0.22), 0 10px 20px rgba(0,0,0,0.18), 0 18px 30px rgba(0,0,0,0.10)",
+        // Library shelf shadow band — strong gradient illusion of depth under each row
+        "shelf": "0 2px 0 0 #d8d8d8, 0 6px 8px rgba(0,0,0,0.18), 0 16px 18px rgba(0,0,0,0.10)",
       },
     },
   },
