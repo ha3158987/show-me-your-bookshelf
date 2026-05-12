@@ -2,23 +2,19 @@
   <defs>
     <style>
       .canvas { fill: #ffffff; }
-      .surface-card { fill: #f6f6f3; }
-      .secondary-bg { fill: #e5e5e0; }
-      .scrim { fill: #000000; opacity: 0.5; }
-      .ink { fill: #000000; }
-      .ink-soft { fill: #211922; }
-      .body { fill: #33332e; }
-      .mute { fill: #62625b; }
-      .ash { fill: #91918c; }
-      .primary { fill: #e60023; }
-      .on-primary { fill: #ffffff; }
-      .heading-lg { font-size: 22px; font-weight: 600; }
-      .body-strong { font-size: 16px; font-weight: 600; }
-      .body-md { font-size: 16px; font-weight: 400; }
+      .scrim { fill: #080808; opacity: 0.5; }
+      .ink { fill: #080808; }
+      .body { fill: #363636; }
+      .body-mid { fill: #5a5a5a; }
+      .mute { fill: #898989; }
+      .mute-soft { fill: #ababab; }
+      .display-md { font-size: 32px; font-weight: 500; }
+      .display-sm { font-size: 24px; font-weight: 500; }
+      .body-md { font-size: 16px; font-weight: 400; letter-spacing: -0.16px; }
       .body-sm { font-size: 14px; font-weight: 400; }
-      .body-sm-strong { font-size: 14px; font-weight: 700; }
-      .button-md { font-size: 14px; font-weight: 700; }
-      .link-md { font-size: 14px; font-weight: 600; }
+      .body-sm-strong { font-size: 14px; font-weight: 500; }
+      .eyebrow-sm { font-size: 12px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase; }
+      .button-md { font-size: 16px; font-weight: 500; letter-spacing: -0.16px; }
     </style>
   </defs>
 
@@ -26,46 +22,53 @@
   <rect class="canvas" width="390" height="780"/>
   <rect class="scrim" width="390" height="780"/>
 
-  <!-- Modal card (rounded-lg 32, padding 32, shadow-modal hint) -->
-  <g transform="translate(30, 140)">
-    <!-- soft shadow approximation -->
-    <rect x="0" y="8" width="330" height="500" rx="32" fill="#000000" opacity="0.16"/>
-    <rect width="330" height="500" rx="32" fill="#ffffff"/>
+  <!-- Modal card: 8px radius, heavy multi-stop shadow (level 4) -->
+  <g transform="translate(30, 110)">
+    <!-- shadow layers -->
+    <rect x="0" y="8" width="330" height="540" rx="8" fill="#080808" opacity="0.26"/>
+    <rect x="0" y="3" width="330" height="540" rx="8" fill="#080808" opacity="0.12"/>
+    <rect width="330" height="540" rx="8" fill="#ffffff"/>
 
-    <!-- Title + subtitle -->
-    <text x="32" y="72" class="ink heading-lg">환영합니다</text>
-    <text x="32" y="96" class="mute body-md">내 서재로 다시 들어오세요.</text>
+    <!-- Eyebrow -->
+    <text x="32" y="64" class="mute eyebrow-sm">WELCOME BACK</text>
+
+    <!-- Title -->
+    <text x="32" y="100" class="ink display-md">로그인</text>
+    <text x="32" y="128" class="body-mid body-md">서재로 돌아오세요.</text>
 
     <!-- Email label + input -->
-    <text x="32" y="138" class="ink body-sm-strong">이메일</text>
+    <text x="32" y="168" class="ink body-sm-strong">이메일</text>
     <g>
-      <rect x="32" y="148" width="266" height="44" rx="16" fill="#ffffff" stroke="#91918c" stroke-width="1"/>
-      <text x="46" y="176" class="ash body-md">you@example.com</text>
+      <rect x="32" y="178" width="266" height="44" rx="4" fill="#ffffff" stroke="#d8d8d8" stroke-width="1"/>
+      <text x="46" y="206" class="mute-soft body-md">you@example.com</text>
     </g>
 
     <!-- Password label + input -->
-    <text x="32" y="220" class="ink body-sm-strong">비밀번호</text>
+    <text x="32" y="250" class="ink body-sm-strong">비밀번호</text>
     <g>
-      <rect x="32" y="230" width="266" height="44" rx="16" fill="#ffffff" stroke="#91918c" stroke-width="1"/>
-      <text x="46" y="258" class="ash body-md">••••••••</text>
+      <rect x="32" y="260" width="266" height="44" rx="4" fill="#ffffff" stroke="#d8d8d8" stroke-width="1"/>
+      <text x="46" y="288" class="mute-soft body-md">••••••••</text>
     </g>
 
-    <!-- Primary login button -->
-    <g transform="translate(32, 290)">
-      <rect width="266" height="40" rx="16" fill="#e60023"/>
-      <text x="133" y="26" class="on-primary button-md" text-anchor="middle">로그인</text>
+    <!-- Primary login button (near-black, 4px) -->
+    <g transform="translate(32, 322)">
+      <rect width="266" height="44" rx="4" fill="#080808"/>
+      <text x="133" y="29" fill="#ffffff" class="button-md" text-anchor="middle">로그인</text>
     </g>
 
-    <!-- Secondary: Google -->
-    <g transform="translate(32, 342)">
-      <rect width="266" height="40" rx="16" fill="#e5e5e0"/>
-      <text x="133" y="26" class="ink button-md" text-anchor="middle">Google로 계속</text>
+    <!-- Secondary: Google (white + hairline) -->
+    <g transform="translate(32, 376)">
+      <rect width="266" height="44" rx="4" fill="#ffffff" stroke="#d8d8d8" stroke-width="1"/>
+      <text x="133" y="29" fill="#080808" class="button-md" text-anchor="middle">Google로 계속</text>
     </g>
 
-    <!-- Toggle: signup link -->
-    <text x="165" y="406" class="ink-soft link-md" text-anchor="middle" text-decoration="underline">처음이신가요? 계정 만들기</text>
+    <!-- Divider eyebrow line -->
+    <line stroke="#d8d8d8" stroke-width="1" x1="32" y1="446" x2="298" y2="446"/>
+
+    <!-- Signup toggle (text-arrow style) -->
+    <text x="165" y="478" class="ink body-sm-strong" text-anchor="middle" text-decoration="underline">처음이신가요? 계정 만들기 →</text>
 
     <!-- Guest link -->
-    <text x="165" y="438" class="mute body-sm" text-anchor="middle">게스트로 둘러보기</text>
+    <text x="165" y="508" class="mute body-sm" text-anchor="middle">게스트로 둘러보기</text>
   </g>
 </svg>

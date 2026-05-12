@@ -197,27 +197,27 @@ components/
   library/
     LibraryView.tsx       ─ 로그인 상태 분기, AddBookFab/AuthModal 트리거
     BookGrid.tsx          ─ 3-up CSS grid (모든 BP에서 3-up)
-    BookCard.tsx          ─ pin-card (16px radius), 표지+제목+저자
+    BookCard.tsx          ─ card-feature (8px radius, hairline border), 표지+제목+저자
     EmptyState.tsx        ─ 빈 서재 일러스트
   add-book/
     AddBookFab.tsx        ─ 좌상단 button-icon-circular (40px, +)
     AddBookSheet.tsx      ─ 모달/시트, 검색바 + 결과 카드
     SearchResultCard.tsx  ─ 한 책 카드, "내 서재에 담기" CTA
   book-detail/
-    BookDetailHero.tsx    ─ pin-card-large (32px radius)
+    BookDetailHero.tsx    ─ card-feature (8px radius) 표지 hero + 메타
     QuoteList.tsx
     QuoteAddSheet.tsx     ─ 구절 입력
     QuoteCardCapture.tsx  ─ html2canvas로 PNG 다운로드 (quote-sharing 패턴)
   auth/
-    AuthModal.tsx         ─ modal-card (32px radius), 이메일/구글 OAuth
+    AuthModal.tsx         ─ ex-modal-card (8px radius + shadow-modal), 이메일/구글 OAuth
     ProfileChip.tsx       ─ 우상단 아바타/로그인 버튼
     AuthProvider.tsx      ─ Supabase 세션 컨텍스트
   ui/
     Button.tsx            ─ variants: primary | secondary | tertiary
     IconButton.tsx        ─ button-icon-circular
     Input.tsx             ─ text-input + focus 더블 링
-    SearchBar.tsx         ─ rounded-full, magnifier 아이콘
-    Modal.tsx             ─ portal + 50% 스크림 + 16px 앰비언트
+    SearchBar.tsx         ─ text-input 베이스 (4px radius) + magnifier 아이콘
+    Modal.tsx             ─ portal + 50% 스크림 + shadow-modal (heavy multi-stop)
 
 lib/
   db/  storage.ts, types.ts, localStorage.ts, supabaseStorage.ts, migrate.ts, index.ts
@@ -234,17 +234,19 @@ public/
 
 ### 3.1 핵심 화면 ↔ DESIGN.md 컴포넌트 매핑
 
-| 화면 요소 | DESIGN.md 컴포넌트 |
+| 화면 요소 | DESIGN.md 컴포넌트 (Webflow) |
 |---|---|
-| 좌상단 + 버튼 | `button-icon-circular` (40px, surface-card 배경) |
-| 서재 책 카드 | `pin-card` (16px radius, padding 0, 표지 풀블리드) |
-| 책 상세 표지 | `pin-card-large` (32px radius) |
-| 검색 바 | `search-bar` (rounded-full, surface-card 배경, focused 시 canvas + ash 보더) |
-| 책 등록/로그인 시트 | `modal-card` (32px radius, padding 32, 50% scrim) |
-| "내 서재에 담기" 버튼 | `button-primary` (Pinterest Red `#e60023`, 16px radius) |
-| "취소"/"닫기" | `button-secondary` (surface-bg `#e5e5e0`) |
-| 텍스트 입력 | `text-input` (44px height, focus 더블 링 `focus-outer` + `focus-inner`) |
-| "Welcome to ..." 헤더 | `typography.heading-lg` (22px, w600) |
+| 좌상단 + 버튼 | `button-icon-circular` (40px, canvas + 1px hairline border, full radius) |
+| 서재 책 카드 | `card-feature` (8px radius, hairline border, padding 0 — 표지 풀블리드) |
+| 책 상세 표지 | `card-feature` (8px radius) — 큰 표지 hero |
+| 검색 바 | `text-input` (4px radius, hairline border, 44px h) + magnifier glyph |
+| 책 등록 시트 / 로그인 시트 | `ex-modal-card` (8px radius, 32px padding, 50% scrim, `shadow-modal` heavy stack) |
+| "서재에 담기" 버튼 | `button-primary` (near-black `#080808`, **4px radius**, 절대 pill 아님) |
+| "취소"/"보조" 버튼 | `button-secondary` (canvas + 1px hairline, 4px radius) |
+| 텍스트 입력 | `text-input` (4px radius, 1px hairline border, focus = 2px ink outline) |
+| "환영합니다" 헤더 | `typography.display-md` (32px, w500) 또는 `display-sm` (24px) |
+| 섹션 라벨 | `typography.eyebrow-uppercase-sm` (12px, w500, 0.6px tracking, UPPERCASE) |
+| 책 표지 (이미지 없을 때 fallback) | 5-stop chromatic 팔레트 중 하나 (purple/pink/blue/orange/green) |
 
 ### 3.2 모바일 그리드 결정
 
@@ -326,7 +328,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 ## 8. PWA & Capacitor 로드맵
 
 본 PR 범위 (포함):
-- `public/manifest.webmanifest` (이름, 아이콘, theme-color = Pinterest Red, display = standalone)
+- `public/manifest.webmanifest` (이름, 아이콘, theme-color = `#080808`, display = standalone)
 - 192/512 아이콘 (Pencil에서 export)
 - `next-pwa` 또는 `@serwist/next`로 service worker 생성 (오프라인 셸 + 캐시)
 

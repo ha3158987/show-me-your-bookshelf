@@ -3,16 +3,23 @@
 @tailwind utilities;
 
 :root {
-  /* DESIGN.md tokens as CSS variables (twin of tailwind config) */
-  --color-primary: #e60023;
+  /* Webflow-derived DESIGN.md tokens as CSS variables (twin of tailwind config) */
+  --color-primary: #080808;
   --color-canvas: #ffffff;
-  --color-surface-card: #f6f6f3;
-  --color-ink: #000000;
-  --color-body: #33332e;
-  --color-mute: #62625b;
-  --color-ash: #91918c;
-  --color-hairline: #dadad3;
-  --color-focus-outer: #435ee5;
+  --color-hairline: #d8d8d8;
+  --color-ink: #080808;
+  --color-ink-strong: #222222;
+  --color-body: #363636;
+  --color-body-mid: #5a5a5a;
+  --color-mute: #898989;
+  --color-mute-soft: #ababab;
+  --color-accent-purple: #7a3dff;
+  --color-accent-pink: #ed52cb;
+  --color-accent-blue: #3b89ff;
+  --color-accent-blue-info: #146ef5;
+  --color-accent-orange: #ff6b00;
+  --color-accent-green: #00d722;
+  --color-accent-red: #ee1d36;
 }
 
 html,
@@ -23,11 +30,12 @@ body {
 
 body {
   font-family: var(--font-inter), -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+  font-feature-settings: "ss01";
   -webkit-font-smoothing: antialiased;
 }
 
-/* Focus ring per DESIGN.md (2px outer with white inner gap via offset) */
+/* Focus ring — single near-black 2px outline matches Webflow restraint */
 :focus-visible {
-  outline: 2px solid var(--color-focus-outer);
+  outline: 2px solid var(--color-ink);
   outline-offset: 2px;
 }

@@ -29,6 +29,21 @@
 
 Pre-task gate accomplished. Ready to continue with Task 6 (domain types) at user's discretion. Plan tasks 6–24 untouched.
 
+## Mid-Phase 4 design swap (post-Task 5)
+
+User requested swap from Pinterest-derived design system to **Webflow-derived** (`npx getdesign@latest add webflow`).
+
+Applied:
+- `DESIGN.md` replaced (Pinterest → Webflow). Source committed to repo root.
+- `tailwind.config.ts` rewritten with new tokens: primary `#080808`, 5-stop chromatic accents (purple/pink/blue/orange/green), radii `none/xs(2)/sm(4)/md(8)/full(9999)`, spacing `xxs..3xl` (4 px base), display-xxl…caption-mono type scale, layered/modal shadow recipes.
+- `app/globals.css` updated CSS variables and focus ring (now single 2 px ink outline).
+- `app/layout.tsx` viewport `themeColor` `#e60023` → `#080808`.
+- All 5 SVG mockups in `docs/design/` regenerated with Webflow palette and 4 / 8 px geometry. Book covers use the chromatic palette as Webflow-style category-card fills (also serves as image-missing fallback per spec §3.1).
+- Design spec §3 component map rewritten (Pinterest → Webflow component names: `card-feature`, `button-primary` 4 px, `ex-modal-card`, `text-input`).
+- `docs/design/README.md` updated.
+
+No data / API / test-toolchain changes. Tasks 6–24 remain untouched. Implementation can resume from Task 6 (domain types) when the user approves.
+
 ## What's pending (Tasks 6–24)
 
 6. Domain types (`lib/db/types.ts`)

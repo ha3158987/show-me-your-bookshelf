@@ -1,133 +1,144 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="Inter, -apple-system, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 720" width="880" height="720" font-family="Inter, -apple-system, system-ui, sans-serif">
   <defs>
     <style>
-      .ink { fill: #000000; }
-      .body { fill: #33332e; }
-      .mute { fill: #62625b; }
-      .label { font-size: 11px; font-weight: 600; }
-      .value { font-size: 10px; font-weight: 400; }
-      .section { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; }
-      .title { font-size: 28px; font-weight: 700; letter-spacing: -1.2px; }
+      .ink { fill: #080808; }
+      .body { fill: #363636; }
+      .mute { fill: #898989; }
+      .body-mid { fill: #5a5a5a; }
+      .canvas-bg { fill: #ffffff; }
+      .label { font-size: 12px; font-weight: 500; letter-spacing: 0; }
+      .value { font-size: 11px; font-weight: 400; font-family: Inconsolata, monospace; }
+      .eyebrow { font-size: 15px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; }
+      .section { font-size: 24px; font-weight: 500; }
+      .title { font-size: 44.8px; font-weight: 600; }
+      .caption { font-size: 12.8px; font-weight: 550; }
     </style>
   </defs>
 
-  <rect width="800" height="600" fill="#fbfbf9"/>
+  <rect width="880" height="720" class="canvas-bg"/>
 
-  <text x="32" y="48" class="ink title">The Ones I Read — Design Tokens</text>
-  <text x="32" y="68" class="mute label">DESIGN.md (Pinterest-derived) applied via tailwind.config.ts + globals.css</text>
+  <text x="32" y="56" class="ink eyebrow">DESIGN SYSTEM</text>
+  <text x="32" y="100" class="ink title">The Ones I Read · Webflow tokens</text>
+  <text x="32" y="124" class="mute label">DESIGN.md applied via tailwind.config.ts + globals.css. Chromatic accents are category-card fills only — never buttons.</text>
 
-  <!-- Brand & Accent -->
-  <text x="32" y="108" class="ink section">Brand</text>
-  <g transform="translate(32, 120)">
-    <rect width="64" height="64" rx="16" fill="#e60023"/>
-    <text x="0" y="80" class="ink label">primary</text>
-    <text x="0" y="92" class="mute value">#e60023</text>
+  <!-- Brand & accents row -->
+  <text x="32" y="172" class="ink section">Brand &amp; chromatic accents</text>
+  <g transform="translate(32, 188)">
+    <rect width="80" height="80" rx="8" fill="#080808"/>
+    <text x="0" y="100" class="ink label">primary</text>
+    <text x="0" y="116" class="mute value">#080808</text>
   </g>
-  <g transform="translate(112, 120)">
-    <rect width="64" height="64" rx="16" fill="#cc001f"/>
-    <text x="0" y="80" class="ink label">primary-pressed</text>
-    <text x="0" y="92" class="mute value">#cc001f</text>
+  <g transform="translate(128, 188)">
+    <rect width="80" height="80" rx="8" fill="#7a3dff"/>
+    <text x="0" y="100" class="ink label">accent-purple</text>
+    <text x="0" y="116" class="mute value">#7a3dff</text>
   </g>
-
-  <!-- Surface -->
-  <text x="232" y="108" class="ink section">Surface</text>
-  <g transform="translate(232, 120)">
-    <rect width="64" height="64" rx="16" fill="#ffffff" stroke="#dadad3"/>
-    <text x="0" y="80" class="ink label">canvas</text>
-    <text x="0" y="92" class="mute value">#ffffff</text>
+  <g transform="translate(224, 188)">
+    <rect width="80" height="80" rx="8" fill="#ed52cb"/>
+    <text x="0" y="100" class="ink label">accent-pink</text>
+    <text x="0" y="116" class="mute value">#ed52cb</text>
   </g>
-  <g transform="translate(312, 120)">
-    <rect width="64" height="64" rx="16" fill="#fbfbf9"/>
-    <text x="0" y="80" class="ink label">surface-soft</text>
-    <text x="0" y="92" class="mute value">#fbfbf9</text>
+  <g transform="translate(320, 188)">
+    <rect width="80" height="80" rx="8" fill="#3b89ff"/>
+    <text x="0" y="100" class="ink label">accent-blue</text>
+    <text x="0" y="116" class="mute value">#3b89ff</text>
   </g>
-  <g transform="translate(392, 120)">
-    <rect width="64" height="64" rx="16" fill="#f6f6f3"/>
-    <text x="0" y="80" class="ink label">surface-card</text>
-    <text x="0" y="92" class="mute value">#f6f6f3</text>
+  <g transform="translate(416, 188)">
+    <rect width="80" height="80" rx="8" fill="#ff6b00"/>
+    <text x="0" y="100" class="ink label">accent-orange</text>
+    <text x="0" y="116" class="mute value">#ff6b00</text>
   </g>
-  <g transform="translate(472, 120)">
-    <rect width="64" height="64" rx="16" fill="#e5e5e0"/>
-    <text x="0" y="80" class="ink label">secondary-bg</text>
-    <text x="0" y="92" class="mute value">#e5e5e0</text>
+  <g transform="translate(512, 188)">
+    <rect width="80" height="80" rx="8" fill="#00d722"/>
+    <text x="0" y="100" class="ink label">accent-green</text>
+    <text x="0" y="116" class="mute value">#00d722</text>
   </g>
 
-  <!-- Text colors -->
-  <text x="32" y="232" class="ink section">Text</text>
-  <g transform="translate(32, 244)">
-    <rect width="64" height="64" rx="16" fill="#000000"/>
-    <text x="0" y="80" class="ink label">ink</text>
-    <text x="0" y="92" class="mute value">#000000</text>
+  <!-- Neutrals row -->
+  <text x="32" y="348" class="ink section">Neutrals</text>
+  <g transform="translate(32, 364)">
+    <rect width="80" height="80" rx="8" fill="#080808"/>
+    <text x="0" y="100" class="ink label">ink</text>
+    <text x="0" y="116" class="mute value">#080808</text>
   </g>
-  <g transform="translate(112, 244)">
-    <rect width="64" height="64" rx="16" fill="#33332e"/>
-    <text x="0" y="80" class="ink label">body</text>
-    <text x="0" y="92" class="mute value">#33332e</text>
+  <g transform="translate(128, 364)">
+    <rect width="80" height="80" rx="8" fill="#363636"/>
+    <text x="0" y="100" class="ink label">body</text>
+    <text x="0" y="116" class="mute value">#363636</text>
   </g>
-  <g transform="translate(192, 244)">
-    <rect width="64" height="64" rx="16" fill="#62625b"/>
-    <text x="0" y="80" class="ink label">mute</text>
-    <text x="0" y="92" class="mute value">#62625b</text>
+  <g transform="translate(224, 364)">
+    <rect width="80" height="80" rx="8" fill="#5a5a5a"/>
+    <text x="0" y="100" class="ink label">body-mid</text>
+    <text x="0" y="116" class="mute value">#5a5a5a</text>
   </g>
-  <g transform="translate(272, 244)">
-    <rect width="64" height="64" rx="16" fill="#91918c"/>
-    <text x="0" y="80" class="ink label">ash</text>
-    <text x="0" y="92" class="mute value">#91918c</text>
+  <g transform="translate(320, 364)">
+    <rect width="80" height="80" rx="8" fill="#898989"/>
+    <text x="0" y="100" class="ink label">mute</text>
+    <text x="0" y="116" class="mute value">#898989</text>
   </g>
-  <g transform="translate(352, 244)">
-    <rect width="64" height="64" rx="16" fill="#dadad3"/>
-    <text x="0" y="80" class="ink label">hairline</text>
-    <text x="0" y="92" class="mute value">#dadad3</text>
+  <g transform="translate(416, 364)">
+    <rect width="80" height="80" rx="8" fill="#ababab"/>
+    <text x="0" y="100" class="ink label">mute-soft</text>
+    <text x="0" y="116" class="mute value">#ababab</text>
+  </g>
+  <g transform="translate(512, 364)">
+    <rect width="80" height="80" rx="8" fill="#ffffff" stroke="#d8d8d8" stroke-width="1"/>
+    <text x="0" y="100" class="ink label">canvas / hairline</text>
+    <text x="0" y="116" class="mute value">#ffffff · #d8d8d8</text>
   </g>
 
-  <!-- Radii -->
-  <text x="32" y="356" class="ink section">Radius</text>
-  <g transform="translate(32, 368)">
-    <rect width="56" height="56" rx="0" fill="#f6f6f3"/>
-    <text x="0" y="72" class="ink label">none — 0</text>
+  <!-- Radius -->
+  <text x="32" y="528" class="ink section">Radius — tight rectangle vocabulary</text>
+  <g transform="translate(32, 544)">
+    <rect width="56" height="56" rx="0" fill="#f4f4f4"/>
+    <text x="0" y="76" class="ink label">none — 0</text>
   </g>
-  <g transform="translate(112, 368)">
-    <rect width="56" height="56" rx="8" fill="#f6f6f3"/>
-    <text x="0" y="72" class="ink label">sm — 8</text>
+  <g transform="translate(112, 544)">
+    <rect width="56" height="56" rx="2" fill="#f4f4f4"/>
+    <text x="0" y="76" class="ink label">xs — 2</text>
   </g>
-  <g transform="translate(192, 368)">
-    <rect width="56" height="56" rx="16" fill="#f6f6f3"/>
-    <text x="0" y="72" class="ink label">md — 16</text>
+  <g transform="translate(192, 544)">
+    <rect width="56" height="56" rx="4" fill="#f4f4f4"/>
+    <text x="0" y="76" class="ink label">sm — 4 (buttons)</text>
   </g>
-  <g transform="translate(272, 368)">
-    <rect width="56" height="56" rx="32" fill="#f6f6f3"/>
-    <text x="0" y="72" class="ink label">lg — 32</text>
+  <g transform="translate(312, 544)">
+    <rect width="56" height="56" rx="8" fill="#f4f4f4"/>
+    <text x="0" y="76" class="ink label">md — 8 (cards)</text>
   </g>
-  <g transform="translate(352, 368)">
-    <circle cx="28" cy="28" r="28" fill="#f6f6f3"/>
-    <text x="0" y="72" class="ink label">full — 9999</text>
+  <g transform="translate(424, 544)">
+    <circle cx="28" cy="28" r="28" fill="#f4f4f4"/>
+    <text x="0" y="76" class="ink label">full — 9999 (icons)</text>
   </g>
 
   <!-- Buttons -->
-  <text x="496" y="356" class="ink section">Buttons</text>
-  <g transform="translate(496, 368)">
-    <rect width="120" height="40" rx="16" fill="#e60023"/>
-    <text x="60" y="26" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">담기</text>
+  <text x="32" y="652" class="ink section">Buttons — tight 4 px, never pill</text>
+  <g transform="translate(32, 668)">
+    <rect width="120" height="44" rx="4" fill="#080808"/>
+    <text x="60" y="29" fill="#ffffff" font-size="16" font-weight="500" letter-spacing="-0.16" text-anchor="middle">담기</text>
   </g>
-  <g transform="translate(496, 416)">
-    <rect width="120" height="40" rx="16" fill="#e5e5e0"/>
-    <text x="60" y="26" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">취소</text>
+  <g transform="translate(168, 668)">
+    <rect width="120" height="44" rx="4" fill="#ffffff" stroke="#d8d8d8" stroke-width="1"/>
+    <text x="60" y="29" fill="#080808" font-size="16" font-weight="500" letter-spacing="-0.16" text-anchor="middle">취소</text>
   </g>
-  <g transform="translate(624, 368)">
-    <circle cx="20" cy="20" r="20" fill="#f6f6f3"/>
-    <rect x="10" y="19" width="20" height="2" fill="#000000"/>
-    <rect x="19" y="10" width="2" height="20" fill="#000000"/>
-    <text x="0" y="56" class="ink label">+ icon-circular</text>
+  <g transform="translate(304, 668)">
+    <text x="0" y="29" fill="#080808" font-size="16" font-weight="500" letter-spacing="-0.16" text-decoration="underline">자세히 →</text>
+    <text x="0" y="50" class="mute label">button-text-arrow</text>
+  </g>
+  <g transform="translate(440, 668)">
+    <circle cx="22" cy="22" r="22" fill="#ffffff" stroke="#d8d8d8"/>
+    <rect x="12" y="21" width="20" height="2" fill="#080808"/>
+    <rect x="21" y="12" width="2" height="20" fill="#080808"/>
+    <text x="0" y="68" class="mute label">icon-circular</text>
   </g>
 
-  <!-- Typography -->
-  <text x="32" y="476" class="ink section">Type (Inter, Pin Sans substitute)</text>
-  <text x="32" y="510" fill="#000000" font-size="28" font-weight="700" letter-spacing="-1.2">내 서재</text>
-  <text x="170" y="510" class="mute label">heading-xl · 28/-1.2</text>
-  <text x="32" y="540" fill="#000000" font-size="22" font-weight="600">책 추가</text>
-  <text x="170" y="540" class="mute label">heading-lg · 22/0</text>
-  <text x="32" y="566" fill="#33332e" font-size="16" font-weight="400">기억하고 싶은 구절을 모아보세요</text>
-  <text x="280" y="566" class="mute label">body-md · 16/0</text>
-  <text x="32" y="590" fill="#62625b" font-size="14" font-weight="400">알베르 카뮈 · 민음사</text>
-  <text x="170" y="590" class="mute label">body-sm · 14/0</text>
+  <!-- Type sample -->
+  <g transform="translate(560, 188)">
+    <text class="ink eyebrow">TYPE</text>
+    <text y="44" fill="#080808" font-size="40" font-weight="600" letter-spacing="-0.8">읽은 책,</text>
+    <text y="84" fill="#080808" font-size="40" font-weight="600" letter-spacing="-0.8">기억할 구절</text>
+    <text y="124" fill="#363636" font-size="16" font-weight="400" letter-spacing="-0.16">display-lg → body-md</text>
+    <text y="170" class="ink caption">CAPTION · 12.8 / 550</text>
+    <text y="210" class="ink label">Inter 400 / 500 / 600 only — weight ceiling 600.</text>
+    <text y="232" class="mute label">Negative tracking on display, single family, no pill.</text>
+  </g>
 </svg>
