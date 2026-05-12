@@ -1,0 +1,9 @@
+{
+  "feature": "Electronic bookshelf app: merge quote-sharing project's features into bookshelf project. ISBN-based book registration, /(home) = my bookshelf landing (3-up grid), top-left plus button to add book, login/guest support. Mobile-first. Decide webapp+wrapper vs React Native. Use Pencil extension for design from scratch. MUST use DESIGN.md (Pinterest design system).",
+  "status": "in_progress",
+  "current_phase": 1,
+  "completed_phases": [],
+  "files_created": [],
+  "started_at": "2026-05-12T13:39:33Z",
+  "last_updated": "2026-05-12T13:39:33Z"
+}
