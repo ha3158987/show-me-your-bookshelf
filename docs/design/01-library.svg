@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 780" width="390" height="780" font-family="Inter, -apple-system, system-ui, sans-serif">
+  <defs>
+    <style>
+      .canvas { fill: #ffffff; }
+      .surface-card { fill: #f6f6f3; }
+      .hairline { stroke: #dadad3; stroke-width: 1; }
+      .ink { fill: #000000; }
+      .body { fill: #33332e; }
+      .mute { fill: #62625b; }
+      .primary { fill: #e60023; }
+      .heading-lg { font-size: 22px; font-weight: 700; letter-spacing: 0; }
+      .body-sm-strong { font-size: 14px; font-weight: 700; }
+      .body-sm { font-size: 14px; font-weight: 400; }
+      .caption-md { font-size: 12px; font-weight: 500; }
+      .button-md { font-size: 14px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect class="canvas" width="390" height="780"/>
+
+  <!-- Header (height 64) -->
+  <g>
+    <line class="hairline" x1="0" y1="64" x2="390" y2="64"/>
+    <!-- AddFab (40 circle, surface-card) -->
+    <circle cx="32" cy="32" r="20" fill="#f6f6f3"/>
+    <!-- Plus icon -->
+    <rect x="22" y="31" width="20" height="2" class="ink"/>
+    <rect x="31" y="22" width="2" height="20" class="ink"/>
+    <!-- Title -->
+    <text x="64" y="40" class="ink heading-lg">내 서재</text>
+    <!-- Sign in -->
+    <text x="358" y="40" class="ink button-md" text-anchor="end">로그인</text>
+  </g>
+
+  <!-- Grid: 3 rows × 3 columns, 16px padding inline, 8px gap -->
+  <g transform="translate(16, 84)">
+    <!-- Row 1 -->
+    <g>
+      <!-- Card 1 -->
+      <g>
+        <rect width="110" height="166" rx="16" fill="#c4b8a4"/>
+        <text x="55" y="92" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">이방인</text>
+        <text x="0" y="184" class="ink body-sm-strong">이방인</text>
+        <text x="0" y="200" class="mute caption-md">알베르 카뮈</text>
+      </g>
+      <!-- Card 2 -->
+      <g transform="translate(118, 0)">
+        <rect width="110" height="166" rx="16" fill="#5a6b5a"/>
+        <text x="55" y="92" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">1984</text>
+        <text x="0" y="184" class="ink body-sm-strong">1984</text>
+        <text x="0" y="200" class="mute caption-md">조지 오웰</text>
+      </g>
+      <!-- Card 3 -->
+      <g transform="translate(236, 0)">
+        <rect width="110" height="166" rx="16" fill="#8b7e7e"/>
+        <text x="55" y="86" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">노르웨이의</text>
+        <text x="55" y="100" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">숲</text>
+        <text x="0" y="184" class="ink body-sm-strong">노르웨이의 숲</text>
+        <text x="0" y="200" class="mute caption-md">무라카미 하루키</text>
+      </g>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(0, 220)">
+      <g>
+        <rect width="110" height="166" rx="16" fill="#a98c6b"/>
+        <text x="55" y="92" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">데미안</text>
+        <text x="0" y="184" class="ink body-sm-strong">데미안</text>
+        <text x="0" y="200" class="mute caption-md">헤르만 헤세</text>
+      </g>
+      <g transform="translate(118, 0)">
+        <rect width="110" height="166" rx="16" fill="#6b4a4a"/>
+        <text x="55" y="86" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">안나</text>
+        <text x="55" y="100" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">카레니나</text>
+        <text x="0" y="184" class="ink body-sm-strong">안나 카레니나</text>
+        <text x="0" y="200" class="mute caption-md">톨스토이</text>
+      </g>
+      <g transform="translate(236, 0)">
+        <rect width="110" height="166" rx="16" fill="#8a9bab"/>
+        <text x="55" y="92" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">무진기행</text>
+        <text x="0" y="184" class="ink body-sm-strong">무진기행</text>
+        <text x="0" y="200" class="mute caption-md">김승옥</text>
+      </g>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(0, 440)">
+      <g>
+        <rect width="110" height="166" rx="16" fill="#6b5a4a"/>
+        <text x="55" y="86" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">죄와</text>
+        <text x="55" y="100" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">벌</text>
+        <text x="0" y="184" class="ink body-sm-strong">죄와 벌</text>
+        <text x="0" y="200" class="mute caption-md">도스토옙스키</text>
+      </g>
+      <g transform="translate(118, 0)">
+        <rect width="110" height="166" rx="16" fill="#b8b8a4"/>
+        <text x="55" y="86" class="caption-md" fill="#000000" text-anchor="middle" opacity="0.7">호밀밭의</text>
+        <text x="55" y="100" class="caption-md" fill="#000000" text-anchor="middle" opacity="0.7">파수꾼</text>
+        <text x="0" y="184" class="ink body-sm-strong">호밀밭의 파수꾼</text>
+        <text x="0" y="200" class="mute caption-md">샐린저</text>
+      </g>
+      <g transform="translate(236, 0)">
+        <rect width="110" height="166" rx="16" fill="#c4a44a"/>
+        <text x="55" y="86" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">어린</text>
+        <text x="55" y="100" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">왕자</text>
+        <text x="0" y="184" class="ink body-sm-strong">어린 왕자</text>
+        <text x="0" y="200" class="mute caption-md">생텍쥐페리</text>
+      </g>
+    </g>
+  </g>
+</svg>

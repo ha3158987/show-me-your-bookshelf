@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 900" width="390" height="900" font-family="Inter, -apple-system, system-ui, sans-serif">
+  <defs>
+    <style>
+      .canvas { fill: #ffffff; }
+      .surface-card { fill: #f6f6f3; }
+      .surface-soft { fill: #fbfbf9; }
+      .ink { fill: #000000; }
+      .body { fill: #33332e; }
+      .mute { fill: #62625b; }
+      .ash { fill: #91918c; }
+      .primary { fill: #e60023; }
+      .on-primary { fill: #ffffff; }
+      .heading-xl { font-size: 28px; font-weight: 700; letter-spacing: -1.2px; }
+      .heading-md { font-size: 18px; font-weight: 600; }
+      .body-md { font-size: 16px; font-weight: 400; }
+      .body-sm { font-size: 14px; font-weight: 400; }
+      .button-md { font-size: 14px; font-weight: 700; }
+      .caption-md { font-size: 12px; font-weight: 500; }
+    </style>
+  </defs>
+
+  <rect class="canvas" width="390" height="900"/>
+
+  <!-- Top bar with back link -->
+  <g>
+    <text x="16" y="40" class="ink button-md">← 내 서재</text>
+  </g>
+
+  <!-- Hero: cover + meta (pin-card-large = 32 radius) -->
+  <g transform="translate(0, 72)">
+    <!-- Cover -->
+    <g transform="translate(115, 0)">
+      <rect width="160" height="240" rx="32" fill="#c4b8a4"/>
+      <text x="80" y="130" class="caption-md" fill="#ffffff" text-anchor="middle" opacity="0.85">이방인</text>
+    </g>
+    <!-- Title block -->
+    <text x="195" y="280" class="ink heading-xl" text-anchor="middle">이방인</text>
+    <text x="195" y="306" class="mute body-md" text-anchor="middle">알베르 카뮈</text>
+    <text x="195" y="324" class="mute body-sm" text-anchor="middle">민음사</text>
+  </g>
+
+  <!-- Primary CTA: 구절 추가 -->
+  <g transform="translate(131, 416)">
+    <rect width="128" height="40" rx="16" fill="#e60023"/>
+    <text x="64" y="26" class="on-primary button-md" text-anchor="middle">구절 추가</text>
+  </g>
+
+  <!-- Quotes section header -->
+  <text x="16" y="500" class="ink heading-md">구절</text>
+
+  <!-- Quote card 1 -->
+  <g transform="translate(16, 516)">
+    <rect width="358" height="120" rx="16" fill="#fbfbf9" stroke="#dadad3" stroke-width="1"/>
+    <text x="20" y="36" class="body body-md">"이 세계가 부조리한 것은 아니다,</text>
+    <text x="20" y="56" class="body body-md">단지 사람이 부조리한 것이다."</text>
+    <text x="20" y="84" class="mute caption-md">— 이방인 · p. 87</text>
+    <!-- Share button -->
+    <text x="340" y="108" class="ink button-md" text-anchor="end" text-decoration="underline">공유 (PNG)</text>
+  </g>
+
+  <!-- Quote card 2 -->
+  <g transform="translate(16, 652)">
+    <rect width="358" height="120" rx="16" fill="#fbfbf9" stroke="#dadad3" stroke-width="1"/>
+    <text x="20" y="36" class="body body-md">"오늘 엄마가 돌아가셨다.</text>
+    <text x="20" y="56" class="body body-md">아니면 어제, 잘 모르겠다."</text>
+    <text x="20" y="84" class="mute caption-md">— 이방인 · p. 7</text>
+    <text x="340" y="108" class="ink button-md" text-anchor="end" text-decoration="underline">공유 (PNG)</text>
+  </g>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 780" width="390" height="780" font-family="Inter, -apple-system, system-ui, sans-serif">
+  <defs>
+    <style>
+      .canvas { fill: #ffffff; }
+      .surface-card { fill: #f6f6f3; }
+      .scrim { fill: #000000; opacity: 0.5; }
+      .ink { fill: #000000; }
+      .body { fill: #33332e; }
+      .mute { fill: #62625b; }
+      .ash { fill: #91918c; }
+      .primary { fill: #e60023; }
+      .on-primary { fill: #ffffff; }
+      .heading-lg { font-size: 22px; font-weight: 600; }
+      .body-strong { font-size: 16px; font-weight: 600; }
+      .body-md { font-size: 16px; font-weight: 400; }
+      .body-sm { font-size: 14px; font-weight: 400; }
+      .caption-md { font-size: 12px; font-weight: 500; }
+      .button-md { font-size: 14px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Faded background (the library underneath) -->
+  <rect class="canvas" width="390" height="780"/>
+  <rect class="scrim" width="390" height="780"/>
+
+  <!-- Modal card (modal-card: rounded-lg 32, padding 32, canvas bg) -->
+  <g transform="translate(20, 90)">
+    <rect width="350" height="600" rx="32" fill="#ffffff"/>
+
+    <!-- Title -->
+    <text x="32" y="68" class="ink heading-lg">책 추가</text>
+
+    <!-- Search bar (search-bar: rounded-full, surface-card bg, padding 11/15, height 48) -->
+    <g transform="translate(32, 92)">
+      <rect width="286" height="48" rx="24" fill="#f6f6f3"/>
+      <!-- magnifier -->
+      <circle cx="22" cy="24" r="6" fill="none" stroke="#62625b" stroke-width="2"/>
+      <line x1="27" y1="29" x2="32" y2="34" stroke="#62625b" stroke-width="2" stroke-linecap="round"/>
+      <text x="44" y="29" class="ash body-md">ISBN 또는 제목으로 검색</text>
+    </g>
+
+    <!-- Result card 1 -->
+    <g transform="translate(32, 168)">
+      <rect width="286" height="120" rx="16" fill="#f6f6f3"/>
+      <!-- Cover -->
+      <rect x="12" y="12" width="64" height="96" rx="8" fill="#c4b8a4"/>
+      <!-- Meta -->
+      <text x="86" y="32" class="ink body-strong">이방인</text>
+      <text x="86" y="54" class="mute body-sm">알베르 카뮈</text>
+      <text x="86" y="72" class="mute caption-md">민음사</text>
+      <!-- Primary button -->
+      <g>
+        <rect x="86" y="80" width="128" height="32" rx="16" fill="#e60023"/>
+        <text x="150" y="100" class="on-primary button-md" text-anchor="middle">내 서재에 담기</text>
+      </g>
+    </g>
+
+    <!-- Result card 2 -->
+    <g transform="translate(32, 304)">
+      <rect width="286" height="120" rx="16" fill="#f6f6f3"/>
+      <rect x="12" y="12" width="64" height="96" rx="8" fill="#5a6b5a"/>
+      <text x="86" y="32" class="ink body-strong">이방인 (해설판)</text>
+      <text x="86" y="54" class="mute body-sm">알베르 카뮈</text>
+      <text x="86" y="72" class="mute caption-md">문학동네</text>
+      <g>
+        <rect x="86" y="80" width="128" height="32" rx="16" fill="#e60023"/>
+        <text x="150" y="100" class="on-primary button-md" text-anchor="middle">내 서재에 담기</text>
+      </g>
+    </g>
+
+    <!-- Result card 3 -->
+    <g transform="translate(32, 440)">
+      <rect width="286" height="120" rx="16" fill="#f6f6f3"/>
+      <rect x="12" y="12" width="64" height="96" rx="8" fill="#8b7e7e"/>
+      <text x="86" y="32" class="ink body-strong">이방인 (개정판)</text>
+      <text x="86" y="54" class="mute body-sm">알베르 카뮈</text>
+      <text x="86" y="72" class="mute caption-md">열린책들</text>
+      <g>
+        <rect x="86" y="80" width="128" height="32" rx="16" fill="#e60023"/>
+        <text x="150" y="100" class="on-primary button-md" text-anchor="middle">내 서재에 담기</text>
+      </g>
+    </g>
+  </g>
+</svg>

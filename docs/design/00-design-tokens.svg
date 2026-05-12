@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="Inter, -apple-system, system-ui, sans-serif">
+  <defs>
+    <style>
+      .ink { fill: #000000; }
+      .body { fill: #33332e; }
+      .mute { fill: #62625b; }
+      .label { font-size: 11px; font-weight: 600; }
+      .value { font-size: 10px; font-weight: 400; }
+      .section { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; }
+      .title { font-size: 28px; font-weight: 700; letter-spacing: -1.2px; }
+    </style>
+  </defs>
+
+  <rect width="800" height="600" fill="#fbfbf9"/>
+
+  <text x="32" y="48" class="ink title">The Ones I Read — Design Tokens</text>
+  <text x="32" y="68" class="mute label">DESIGN.md (Pinterest-derived) applied via tailwind.config.ts + globals.css</text>
+
+  <!-- Brand & Accent -->
+  <text x="32" y="108" class="ink section">Brand</text>
+  <g transform="translate(32, 120)">
+    <rect width="64" height="64" rx="16" fill="#e60023"/>
+    <text x="0" y="80" class="ink label">primary</text>
+    <text x="0" y="92" class="mute value">#e60023</text>
+  </g>
+  <g transform="translate(112, 120)">
+    <rect width="64" height="64" rx="16" fill="#cc001f"/>
+    <text x="0" y="80" class="ink label">primary-pressed</text>
+    <text x="0" y="92" class="mute value">#cc001f</text>
+  </g>
+
+  <!-- Surface -->
+  <text x="232" y="108" class="ink section">Surface</text>
+  <g transform="translate(232, 120)">
+    <rect width="64" height="64" rx="16" fill="#ffffff" stroke="#dadad3"/>
+    <text x="0" y="80" class="ink label">canvas</text>
+    <text x="0" y="92" class="mute value">#ffffff</text>
+  </g>
+  <g transform="translate(312, 120)">
+    <rect width="64" height="64" rx="16" fill="#fbfbf9"/>
+    <text x="0" y="80" class="ink label">surface-soft</text>
+    <text x="0" y="92" class="mute value">#fbfbf9</text>
+  </g>
+  <g transform="translate(392, 120)">
+    <rect width="64" height="64" rx="16" fill="#f6f6f3"/>
+    <text x="0" y="80" class="ink label">surface-card</text>
+    <text x="0" y="92" class="mute value">#f6f6f3</text>
+  </g>
+  <g transform="translate(472, 120)">
+    <rect width="64" height="64" rx="16" fill="#e5e5e0"/>
+    <text x="0" y="80" class="ink label">secondary-bg</text>
+    <text x="0" y="92" class="mute value">#e5e5e0</text>
+  </g>
+
+  <!-- Text colors -->
+  <text x="32" y="232" class="ink section">Text</text>
+  <g transform="translate(32, 244)">
+    <rect width="64" height="64" rx="16" fill="#000000"/>
+    <text x="0" y="80" class="ink label">ink</text>
+    <text x="0" y="92" class="mute value">#000000</text>
+  </g>
+  <g transform="translate(112, 244)">
+    <rect width="64" height="64" rx="16" fill="#33332e"/>
+    <text x="0" y="80" class="ink label">body</text>
+    <text x="0" y="92" class="mute value">#33332e</text>
+  </g>
+  <g transform="translate(192, 244)">
+    <rect width="64" height="64" rx="16" fill="#62625b"/>
+    <text x="0" y="80" class="ink label">mute</text>
+    <text x="0" y="92" class="mute value">#62625b</text>
+  </g>
+  <g transform="translate(272, 244)">
+    <rect width="64" height="64" rx="16" fill="#91918c"/>
+    <text x="0" y="80" class="ink label">ash</text>
+    <text x="0" y="92" class="mute value">#91918c</text>
+  </g>
+  <g transform="translate(352, 244)">
+    <rect width="64" height="64" rx="16" fill="#dadad3"/>
+    <text x="0" y="80" class="ink label">hairline</text>
+    <text x="0" y="92" class="mute value">#dadad3</text>
+  </g>
+
+  <!-- Radii -->
+  <text x="32" y="356" class="ink section">Radius</text>
+  <g transform="translate(32, 368)">
+    <rect width="56" height="56" rx="0" fill="#f6f6f3"/>
+    <text x="0" y="72" class="ink label">none — 0</text>
+  </g>
+  <g transform="translate(112, 368)">
+    <rect width="56" height="56" rx="8" fill="#f6f6f3"/>
+    <text x="0" y="72" class="ink label">sm — 8</text>
+  </g>
+  <g transform="translate(192, 368)">
+    <rect width="56" height="56" rx="16" fill="#f6f6f3"/>
+    <text x="0" y="72" class="ink label">md — 16</text>
+  </g>
+  <g transform="translate(272, 368)">
+    <rect width="56" height="56" rx="32" fill="#f6f6f3"/>
+    <text x="0" y="72" class="ink label">lg — 32</text>
+  </g>
+  <g transform="translate(352, 368)">
+    <circle cx="28" cy="28" r="28" fill="#f6f6f3"/>
+    <text x="0" y="72" class="ink label">full — 9999</text>
+  </g>
+
+  <!-- Buttons -->
+  <text x="496" y="356" class="ink section">Buttons</text>
+  <g transform="translate(496, 368)">
+    <rect width="120" height="40" rx="16" fill="#e60023"/>
+    <text x="60" y="26" fill="#ffffff" font-size="14" font-weight="700" text-anchor="middle">담기</text>
+  </g>
+  <g transform="translate(496, 416)">
+    <rect width="120" height="40" rx="16" fill="#e5e5e0"/>
+    <text x="60" y="26" fill="#000000" font-size="14" font-weight="700" text-anchor="middle">취소</text>
+  </g>
+  <g transform="translate(624, 368)">
+    <circle cx="20" cy="20" r="20" fill="#f6f6f3"/>
+    <rect x="10" y="19" width="20" height="2" fill="#000000"/>
+    <rect x="19" y="10" width="2" height="20" fill="#000000"/>
+    <text x="0" y="56" class="ink label">+ icon-circular</text>
+  </g>
+
+  <!-- Typography -->
+  <text x="32" y="476" class="ink section">Type (Inter, Pin Sans substitute)</text>
+  <text x="32" y="510" fill="#000000" font-size="28" font-weight="700" letter-spacing="-1.2">내 서재</text>
+  <text x="170" y="510" class="mute label">heading-xl · 28/-1.2</text>
+  <text x="32" y="540" fill="#000000" font-size="22" font-weight="600">책 추가</text>
+  <text x="170" y="540" class="mute label">heading-lg · 22/0</text>
+  <text x="32" y="566" fill="#33332e" font-size="16" font-weight="400">기억하고 싶은 구절을 모아보세요</text>
+  <text x="280" y="566" class="mute label">body-md · 16/0</text>
+  <text x="32" y="590" fill="#62625b" font-size="14" font-weight="400">알베르 카뮈 · 민음사</text>
+  <text x="170" y="590" class="mute label">body-sm · 14/0</text>
+</svg>
