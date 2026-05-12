@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 780" width="390" height="780" font-family="Inter, -apple-system, system-ui, sans-serif">
+  <defs>
+    <!-- Strong shelf shadow gradient: deep at top, fades into canvas below -->
+    <linearGradient id="shelfShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.42"/>
+      <stop offset="22%" stop-color="#000000" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#000000" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Soft contact shadow under each book — strong center fading to none -->
+    <radialGradient id="bookShadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .ink { fill: #080808; }
+      .body-mid { fill: #5a5a5a; }
+      .mute { fill: #898989; }
+      .display-sm { font-size: 24px; font-weight: 500; }
+      .eyebrow-sm { font-size: 12px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase; }
+      .button-md { font-size: 16px; font-weight: 500; letter-spacing: -0.16px; }
+      .cover-eyebrow { font-size: 7px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; }
+      .cover-title { font-size: 13px; font-weight: 700; letter-spacing: -0.2px; }
+      .cover-title-sm { font-size: 11px; font-weight: 700; letter-spacing: -0.15px; }
+      .cover-meta { font-size: 7px; font-weight: 500; }
+    </style>
+  </defs>
+
+  <!-- Canvas: light -->
+  <rect width="390" height="780" fill="#ffffff"/>
+
+  <!-- ─── Header (no status bar) ─── -->
+  <g transform="translate(0, 16)">
+    <!-- AddFab: hairline-outlined circle -->
+    <circle cx="32" cy="22" r="18" fill="#ffffff" stroke="#d8d8d8" stroke-width="1"/>
+    <rect x="22" y="21" width="20" height="2" class="ink"/>
+    <rect x="31" y="12" width="2" height="20" class="ink"/>
+    <!-- Center title -->
+    <text x="195" y="30" class="ink display-sm" text-anchor="middle">내 서재</text>
+    <!-- Right -->
+    <text x="358" y="30" class="ink button-md" text-anchor="end">로그인</text>
+  </g>
+
+  <!-- ─── Section divider: eyebrow + 1px hairline ─── -->
+  <g transform="translate(0, 80)">
+    <text x="16" y="0" class="mute eyebrow-sm">YOUR SHELF · 9 BOOKS</text>
+    <line x1="16" y1="14" x2="374" y2="14" stroke="#d8d8d8" stroke-width="1"/>
+  </g>
+
+  <!-- ─── Row 1 ─── -->
+  <g transform="translate(0, 116)">
+    <!-- Book 1: purple, memoir -->
+    <g transform="translate(20, 0)">
+      <rect width="102" height="158" rx="2" fill="#7a3dff"/>
+      <rect x="0" y="0" width="102" height="5" fill="#9b66ff"/>
+      <text x="10" y="30" fill="#ffffff" class="cover-eyebrow">MEMOIR</text>
+      <text x="10" y="56" fill="#ffffff" class="cover-title">이방인</text>
+      <text x="10" y="74" fill="rgba(255,255,255,0.78)" class="cover-meta">알베르 카뮈</text>
+      <circle cx="78" cy="136" r="14" fill="rgba(255,255,255,0.2)"/>
+      <circle cx="78" cy="136" r="6" fill="rgba(255,255,255,0.45)"/>
+    </g>
+    <!-- Book 2: literary cream with vertical strokes -->
+    <g transform="translate(144, 0)">
+      <rect width="102" height="158" rx="2" fill="#f4ede0"/>
+      <line x1="14" y1="60" x2="14" y2="135" stroke="#363636" stroke-width="1.2"/>
+      <line x1="22" y1="48" x2="22" y2="135" stroke="#ee1d36" stroke-width="1.2"/>
+      <line x1="30" y1="68" x2="30" y2="135" stroke="#363636" stroke-width="1.2"/>
+      <line x1="40" y1="38" x2="40" y2="135" stroke="#363636" stroke-width="1.2"/>
+      <line x1="50" y1="78" x2="50" y2="135" stroke="#00d722" stroke-width="1.2"/>
+      <line x1="62" y1="52" x2="62" y2="135" stroke="#363636" stroke-width="1.2"/>
+      <line x1="74" y1="60" x2="74" y2="135" stroke="#363636" stroke-width="1.2"/>
+      <line x1="84" y1="42" x2="84" y2="135" stroke="#ee1d36" stroke-width="1.2"/>
+      <text x="51" y="22" class="ink cover-title-sm" text-anchor="middle">소설</text>
+      <text x="51" y="148" class="ink cover-meta" text-anchor="middle">단편선 · 2024</text>
+    </g>
+    <!-- Book 3: blue with concentric circles -->
+    <g transform="translate(268, 0)">
+      <rect width="102" height="158" rx="2" fill="#3b89ff"/>
+      <circle cx="78" cy="118" r="34" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+      <circle cx="78" cy="118" r="22" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+      <text x="10" y="30" fill="#ffffff" class="cover-eyebrow">ESSAY</text>
+      <text x="10" y="56" fill="#ffffff" class="cover-title">독서</text>
+      <text x="10" y="74" fill="#ffffff" class="cover-title">습관</text>
+      <text x="10" y="92" fill="rgba(255,255,255,0.78)" class="cover-meta">박지원</text>
+    </g>
+
+    <!-- Per-book contact shadow (radial, sits at book base) -->
+    <ellipse cx="71" cy="160" rx="46" ry="4" fill="url(#bookShadow)"/>
+    <ellipse cx="195" cy="160" rx="46" ry="4" fill="url(#bookShadow)"/>
+    <ellipse cx="319" cy="160" rx="46" ry="4" fill="url(#bookShadow)"/>
+
+    <!-- Shelf edge + strong gradient shadow band -->
+    <line x1="0" y1="162" x2="390" y2="162" stroke="#d8d8d8" stroke-width="1"/>
+    <rect x="0" y="163" width="390" height="34" fill="url(#shelfShadow)"/>
+  </g>
+
+  <!-- ─── Row 2 ─── -->
+  <g transform="translate(0, 332)">
+    <!-- Book 4: near-black with green marks -->
+    <g transform="translate(20, 0)">
+      <rect width="102" height="158" rx="2" fill="#080808"/>
+      <text x="10" y="22" fill="#00d722" class="cover-eyebrow">COPY</text>
+      <text x="10" y="46" fill="#ffffff" class="cover-title-sm">카피라이터</text>
+      <polyline points="20,80 26,72 22,82 30,76 26,86" fill="none" stroke="#00d722" stroke-width="1.4" stroke-linecap="round"/>
+      <polyline points="44,90 50,80 46,90 54,84 50,94" fill="none" stroke="#00d722" stroke-width="1.4" stroke-linecap="round"/>
+      <polyline points="68,80 74,70 70,80 78,74 74,84" fill="none" stroke="#00d722" stroke-width="1.4" stroke-linecap="round"/>
+      <text x="51" y="128" fill="#00d722" class="cover-title" text-anchor="middle">What to</text>
+      <text x="51" y="144" fill="#00d722" class="cover-title" text-anchor="middle">say!</text>
+    </g>
+    <!-- Book 5: orange/teal split with microphone glyph -->
+    <g transform="translate(144, 0)">
+      <rect width="102" height="158" rx="2" fill="#ff6b00"/>
+      <rect x="0" y="78" width="102" height="80" fill="#006acc"/>
+      <text x="51" y="22" fill="#ffffff" class="cover-eyebrow" text-anchor="middle">SPEAK</text>
+      <text x="51" y="50" fill="#ffffff" class="cover-title-sm" text-anchor="middle">한 문장으로</text>
+      <text x="51" y="66" fill="#ffffff" class="cover-title-sm" text-anchor="middle">말하라</text>
+      <circle cx="51" cy="116" r="11" fill="#ffae13"/>
+      <rect x="49" y="118" width="4" height="14" fill="#ffae13"/>
+      <line x1="42" y1="136" x2="60" y2="136" stroke="#ffae13" stroke-width="2"/>
+    </g>
+    <!-- Book 6: pink with mini white card + heart -->
+    <g transform="translate(268, 0)">
+      <rect width="102" height="158" rx="2" fill="#ed52cb"/>
+      <text x="10" y="22" fill="#ffffff" class="cover-eyebrow">DETAIL</text>
+      <text x="10" y="48" fill="#ffffff" class="cover-title-sm">호감의</text>
+      <text x="10" y="66" fill="#ffffff" class="cover-title-sm">디테일</text>
+      <rect x="28" y="82" width="46" height="58" rx="2" fill="#ffffff"/>
+      <path d="M 51 110 C 48 104, 41 104, 41 111 C 41 116, 51 124, 51 124 C 51 124, 61 116, 61 111 C 61 104, 54 104, 51 110 Z" fill="#ee1d36"/>
+    </g>
+
+    <ellipse cx="71" cy="160" rx="46" ry="4" fill="url(#bookShadow)"/>
+    <ellipse cx="195" cy="160" rx="46" ry="4" fill="url(#bookShadow)"/>
+    <ellipse cx="319" cy="160" rx="46" ry="4" fill="url(#bookShadow)"/>
+
+    <line x1="0" y1="162" x2="390" y2="162" stroke="#d8d8d8" stroke-width="1"/>
+    <rect x="0" y="163" width="390" height="34" fill="url(#shelfShadow)"/>
+  </g>
+
+  <!-- ─── Row 3 ─── -->
+  <g transform="translate(0, 548)">
+    <!-- Book 7: yellow with window-pattern -->
+    <g transform="translate(20, 0)">
+      <rect width="102" height="158" rx="2" fill="#ffae13"/>
+      <text x="10" y="26" fill="#080808" class="cover-eyebrow">CLASSIC</text>
+      <text x="10" y="50" fill="#080808" class="cover-title">서재</text>
+      <text x="10" y="66" fill="#363636" class="cover-meta">A novel</text>
+      <g transform="translate(28, 80)">
+        <rect width="56" height="66" fill="#080808"/>
+        <line x1="28" y1="0" x2="28" y2="66" stroke="#ffae13" stroke-width="2"/>
+        <line x1="0" y1="33" x2="56" y2="33" stroke="#ffae13" stroke-width="2"/>
+        <polyline points="6,28 14,18 22,24 18,8" fill="none" stroke="#ffae13" stroke-width="0.8"/>
+        <polyline points="34,28 42,18 48,22" fill="none" stroke="#ffae13" stroke-width="0.8"/>
+        <polyline points="10,58 16,50 22,56" fill="none" stroke="#ffae13" stroke-width="0.8"/>
+        <polyline points="38,58 44,48 50,54" fill="none" stroke="#ffae13" stroke-width="0.8"/>
+      </g>
+    </g>
+    <!-- Book 8: pastel with soft figure -->
+    <g transform="translate(144, 0)">
+      <rect width="102" height="158" rx="2" fill="#fce4ee"/>
+      <circle cx="76" cy="32" r="10" fill="none" stroke="#9d9d9d" stroke-width="0.8"/>
+      <text x="10" y="24" fill="#5a5a5a" class="cover-eyebrow">POETRY</text>
+      <circle cx="38" cy="108" r="6" fill="#fbb4c4"/>
+      <path d="M 32 114 L 32 132 L 44 132 L 44 114 Z" fill="#fbb4c4"/>
+      <text x="10" y="148" class="ink cover-title">앞으로 올</text>
+    </g>
+    <!-- Book 9: green with horizontal lines (paper texture) -->
+    <g transform="translate(268, 0)">
+      <rect width="102" height="158" rx="2" fill="#00d722"/>
+      <line x1="0" y1="30" x2="102" y2="30" stroke="#00b81e" stroke-width="0.5"/>
+      <line x1="0" y1="60" x2="102" y2="60" stroke="#00b81e" stroke-width="0.5"/>
+      <line x1="0" y1="90" x2="102" y2="90" stroke="#00b81e" stroke-width="0.5"/>
+      <line x1="0" y1="120" x2="102" y2="120" stroke="#00b81e" stroke-width="0.5"/>
+      <text x="10" y="22" fill="#080808" class="cover-eyebrow">BRAIN</text>
+      <text x="10" y="50" fill="#080808" class="cover-title">직관의</text>
+      <text x="10" y="68" fill="#080808" class="cover-title">폭발</text>
+      <text x="10" y="148" fill="#080808" class="cover-meta">直 觀</text>
+    </g>
+
+    <ellipse cx="71" cy="160" rx="46" ry="4" fill="url(#bookShadow)"/>
+    <ellipse cx="195" cy="160" rx="46" ry="4" fill="url(#bookShadow)"/>
+    <ellipse cx="319" cy="160" rx="46" ry="4" fill="url(#bookShadow)"/>
+
+    <line x1="0" y1="162" x2="390" y2="162" stroke="#d8d8d8" stroke-width="1"/>
+    <rect x="0" y="163" width="390" height="34" fill="url(#shelfShadow)"/>
+  </g>
+</svg>

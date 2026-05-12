@@ -3,19 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Webflow-derived DESIGN.md tokens as CSS variables (twin of tailwind config) */
+  --color-primary: #080808;
+  --color-canvas: #ffffff;
+  --color-hairline: #d8d8d8;
+  --color-ink: #080808;
+  --color-ink-strong: #222222;
+  --color-body: #363636;
+  --color-body-mid: #5a5a5a;
+  --color-mute: #898989;
+  --color-mute-soft: #ababab;
+  --color-accent-purple: #7a3dff;
+  --color-accent-pink: #ed52cb;
+  --color-accent-blue: #3b89ff;
+  --color-accent-blue-info: #146ef5;
+  --color-accent-orange: #ff6b00;
+  --color-accent-green: #00d722;
+  --color-accent-red: #ee1d36;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--color-canvas);
+  color: var(--color-body);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+  font-feature-settings: "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Focus ring — single near-black 2px outline matches Webflow restraint */
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
 }

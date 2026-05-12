@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 920" width="390" height="920" font-family="Inter, -apple-system, system-ui, sans-serif">
+  <defs>
+    <style>
+      .canvas { fill: #ffffff; }
+      .hairline { stroke: #d8d8d8; stroke-width: 1; fill: none; }
+      .ink { fill: #080808; }
+      .body { fill: #363636; }
+      .body-mid { fill: #5a5a5a; }
+      .mute { fill: #898989; }
+      .display-md { font-size: 32px; font-weight: 500; }
+      .display-sm { font-size: 24px; font-weight: 500; }
+      .body-md { font-size: 16px; font-weight: 400; letter-spacing: -0.16px; }
+      .body-md-strong { font-size: 16px; font-weight: 500; letter-spacing: -0.16px; }
+      .body-sm { font-size: 14px; font-weight: 400; }
+      .body-sm-strong { font-size: 14px; font-weight: 500; }
+      .caption { font-size: 12.8px; font-weight: 550; }
+      .eyebrow-sm { font-size: 12px; font-weight: 500; letter-spacing: 0.6px; text-transform: uppercase; }
+      .button-md { font-size: 16px; font-weight: 500; letter-spacing: -0.16px; }
+      .cover-label { font-size: 14px; font-weight: 600; letter-spacing: -0.2px; }
+    </style>
+  </defs>
+
+  <rect class="canvas" width="390" height="920"/>
+
+  <!-- Nav bar with back -->
+  <g>
+    <line stroke="#d8d8d8" stroke-width="1" x1="0" y1="56" x2="390" y2="56"/>
+    <text x="16" y="36" class="ink body-sm-strong">← 내 서재</text>
+  </g>
+
+  <!-- Hero: cover (8px radius) -->
+  <g transform="translate(115, 88)">
+    <rect width="160" height="220" rx="8" fill="#7a3dff"/>
+    <text x="20" y="200" fill="#ffffff" class="cover-label">이방인</text>
+  </g>
+
+  <!-- Title block -->
+  <text x="195" y="344" class="ink display-md" text-anchor="middle">이방인</text>
+  <text x="195" y="372" class="body-mid body-md" text-anchor="middle">알베르 카뮈</text>
+  <text x="195" y="394" class="mute body-sm" text-anchor="middle">민음사 · 2011 · 9788937462788</text>
+
+  <!-- Primary CTA: 구절 추가 (4px radius, black) -->
+  <g transform="translate(115, 420)">
+    <rect width="160" height="44" rx="4" fill="#080808"/>
+    <text x="80" y="29" fill="#ffffff" class="button-md" text-anchor="middle">구절 추가</text>
+  </g>
+
+  <!-- Quotes eyebrow -->
+  <text x="16" y="508" class="mute eyebrow-sm">SAVED PASSAGES · 2</text>
+
+  <!-- Quote card 1 (feature-card: canvas + hairline + 8px radius + 32px padding) -->
+  <g transform="translate(16, 524)">
+    <rect width="358" height="148" rx="8" fill="#ffffff" stroke="#d8d8d8" stroke-width="1"/>
+    <text x="24" y="48" class="ink body-md-strong">"이 세계가 부조리한 것은 아니다,</text>
+    <text x="24" y="68" class="ink body-md-strong">단지 사람이 부조리한 것이다."</text>
+    <line stroke="#d8d8d8" stroke-width="1" x1="24" y1="92" x2="334" y2="92"/>
+    <text x="24" y="116" class="mute body-sm">p. 87 · 2026-05-12</text>
+    <text x="334" y="116" class="ink body-sm-strong" text-anchor="end" text-decoration="underline">공유 (PNG) →</text>
+  </g>
+
+  <!-- Quote card 2 -->
+  <g transform="translate(16, 692)">
+    <rect width="358" height="148" rx="8" fill="#ffffff" stroke="#d8d8d8" stroke-width="1"/>
+    <text x="24" y="48" class="ink body-md-strong">"오늘 엄마가 돌아가셨다.</text>
+    <text x="24" y="68" class="ink body-md-strong">아니면 어제, 잘 모르겠다."</text>
+    <line stroke="#d8d8d8" stroke-width="1" x1="24" y1="92" x2="334" y2="92"/>
+    <text x="24" y="116" class="mute body-sm">p. 7 · 2026-05-12</text>
+    <text x="334" y="116" class="ink body-sm-strong" text-anchor="end" text-decoration="underline">공유 (PNG) →</text>
+  </g>
+</svg>
