@@ -3,19 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* DESIGN.md tokens as CSS variables (twin of tailwind config) */
+  --color-primary: #e60023;
+  --color-canvas: #ffffff;
+  --color-surface-card: #f6f6f3;
+  --color-ink: #000000;
+  --color-body: #33332e;
+  --color-mute: #62625b;
+  --color-ash: #91918c;
+  --color-hairline: #dadad3;
+  --color-focus-outer: #435ee5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  background: var(--color-canvas);
+  color: var(--color-body);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Focus ring per DESIGN.md (2px outer with white inner gap via offset) */
+:focus-visible {
+  outline: 2px solid var(--color-focus-outer);
+  outline-offset: 2px;
 }
